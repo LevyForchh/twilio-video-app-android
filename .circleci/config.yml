@@ -157,25 +157,28 @@ workflows:
   build-test-publish:
     jobs:
       - build-app
-      - lint
-      - check-format
-      - unit-tests:
-          requires:
-            - build-app
-            - lint
-            - check-format
       - ui-tests:
           requires:
             - build-app
-            - lint
-            - check-format
-      - publish-to-appcenter:
-          requires:
-            - build-app
-            - lint
-            - check-format
-            - unit-tests
-            - ui-tests
-          filters:
-            branches:
-              only: master
+#      - lint
+#      - check-format
+#      - unit-tests:
+#          requires:
+#            - build-app
+#            - lint
+#            - check-format
+#      - ui-tests:
+#          requires:
+#            - build-app
+#            - lint
+#            - check-format
+#      - publish-to-appcenter:
+#          requires:
+#            - build-app
+#            - lint
+#            - check-format
+#            - unit-tests
+#            - ui-tests
+#          filters:
+#            branches:
+#              only: master
